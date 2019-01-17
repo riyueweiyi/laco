@@ -39,8 +39,8 @@ export class Store {
     }
   }
 
-  get() {
-    return STORE[this.idx]
+  get(state: Function) {
+    return state(STORE[this.idx])
   }
 
   set(state: Function, info?: String) {
